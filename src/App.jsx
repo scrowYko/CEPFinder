@@ -1,13 +1,17 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cep from "./components/PesquisaCEP";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-    <h1>Pesquise um CEP</h1>
-      <div>
-        <Cep/>
-      </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/search" element={<Cep />}/>
+      </Routes>
+    </Router>
     </>
   );
 }
